@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
+    public Text score;
     public Rigidbody rb;
     public float forwardForce;
     public float sideForce;
@@ -29,5 +31,9 @@ public class PlayerMove : MonoBehaviour
         {
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0);
         }
+
+        score.text = transform.position.z.ToString("0");
     }
+
+   
 }
